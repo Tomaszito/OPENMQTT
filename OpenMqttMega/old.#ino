@@ -1,0 +1,884 @@
+/*Mqtt payload setup*//*
+const String subsrcibeOut[OUTPUTSINSYSTEM] = {
+  SubTopicOut1,
+  SubTopicOut2,
+  SubTopicOut3,
+  SubTopicOut4,
+  SubTopicOut5,
+  SubTopicOut6,
+  SubTopicOut7,
+  SubTopicOut8,
+  SubTopicOut9,
+  SubTopicOut10,
+  SubTopicOut11,
+  SubTopicOut12,
+  SubTopicOut13,
+  SubTopicOut14,
+  SubTopicOut15,
+  SubTopicOut16,
+  SubTopicOut17,
+  SubTopicOut18,
+  SubTopicOut19,
+  SubTopicOut20,
+  SubTopicOut21,
+  SubTopicOut22,
+  SubTopicOut23,
+  SubTopicOut24,
+  SubTopicOut25,
+  SubTopicOut26,
+  SubTopicOut27,
+  SubTopicOut28,
+  SubTopicOut29,
+  SubTopicOut30,
+  SubTopicOut31,
+  SubTopicOut32,
+  SubTopicOut33,
+  SubTopicOut34,
+  SubTopicOut35,
+  SubTopicOut36
+};
+
+const String subsrcibeIn[INPUTSINSYSTEM] = {
+  SubTopicIn1,
+  SubTopicIn2,
+  SubTopicIn3,
+  SubTopicIn4,
+  SubTopicIn5,
+  SubTopicIn6,
+  SubTopicIn7,
+  SubTopicIn8,
+  SubTopicIn9,
+  SubTopicIn10,
+  SubTopicIn11,
+  SubTopicIn12,
+  SubTopicIn13,
+  SubTopicIn14,
+  SubTopicIn15,
+  SubTopicIn16,
+  SubTopicIn17,
+  SubTopicIn18,
+  SubTopicIn19,
+  SubTopicIn20,
+  SubTopicIn21,
+  SubTopicIn22,
+  SubTopicIn23,
+  SubTopicIn24,
+  SubTopicIn25,
+  SubTopicIn26,
+  SubTopicIn27
+};
+const String publisOut[OUTPUTSINSYSTEM] = {
+  PubTopicOut1,
+  PubTopicOut2,
+  PubTopicOut3,
+  PubTopicOut4,
+  PubTopicOut5,
+  PubTopicOut6,
+  PubTopicOut7,
+  PubTopicOut8,
+  PubTopicOut9,
+  PubTopicOut10,
+  PubTopicOut11,
+  PubTopicOut12,
+  PubTopicOut13,
+  PubTopicOut14,
+  PubTopicOut15,
+  PubTopicOut16,
+  PubTopicOut17,
+  PubTopicOut18,
+  PubTopicOut19,
+  PubTopicOut20,
+  PubTopicOut21,
+  PubTopicOut22,
+  PubTopicOut23,
+  PubTopicOut24,
+  PubTopicOut25,
+  PubTopicOut26,
+  PubTopicOut27,
+  PubTopicOut28,
+  PubTopicOut29,
+  PubTopicOut30,
+  PubTopicOut31,
+  PubTopicOut32,
+  PubTopicOut33,
+  PubTopicOut34,
+  PubTopicOut35,
+  PubTopicOut36,
+};
+const String publisIn[INPUTSINSYSTEM] = {
+  PubTopicIn1,
+  PubTopicIn2,
+  PubTopicIn3,
+  PubTopicIn4,
+  PubTopicIn5,
+  PubTopicIn6,
+  PubTopicIn7,
+  PubTopicIn8,
+  PubTopicIn9,
+  PubTopicIn10,
+  PubTopicIn11,
+  PubTopicIn12,
+  PubTopicIn13,
+  PubTopicIn14,
+  PubTopicIn15,
+  PubTopicIn16,
+  PubTopicIn17,
+  PubTopicIn18,
+  PubTopicIn19,
+  PubTopicIn20,
+  PubTopicIn21,
+  PubTopicIn22,
+  PubTopicIn23,
+  PubTopicIn24,
+  PubTopicIn25,
+  PubTopicIn26,
+  PubTopicIn27
+};
+const String PubTopicTemp[] = {
+  PubTopicTemp1,
+  PubTopicTemp2,
+  PubTopicTemp3,
+  PubTopicTemp4,
+  PubTopicTemp5,
+  PubTopicTemp6,
+  PubTopicTemp7,
+  PubTopicTemp8,
+  PubTopicTemp9,
+  PubTopicTemp10,
+};
+const String PubTopicHumidity[] = {
+  PubTopicHumidity1,
+  PubTopicHumidity2,
+  PubTopicHumidity3,
+  PubTopicHumidity4,
+  PubTopicHumidity5,
+  PubTopicHumidity6,
+  PubTopicHumidity7,
+  PubTopicHumidity8,
+  PubTopicHumidity9,
+  PubTopicHumidity10,
+};
+
+const String PubTopicHvacTemp[] = {
+  PubTopicHvacTemp1,
+  PubTopicHvacTemp2,
+  PubTopicHvacTemp3,
+  PubTopicHvacTemp4,
+  PubTopicHvacTemp5,
+  PubTopicHvacTemp6,
+  PubTopicHvacTemp7,
+  PubTopicHvacTemp8,
+  PubTopicHvacTemp9
+};
+
+const String SubTopicHvacTemp[] = {
+  SubTopicHvacTemp1,
+  SubTopicHvacTemp2,
+  SubTopicHvacTemp3,
+  SubTopicHvacTemp4,
+  SubTopicHvacTemp5,
+  SubTopicHvacTemp6,
+  SubTopicHvacTemp7,
+  SubTopicHvacTemp8,
+  SubTopicHvacTemp9
+};
+
+const String PubTopicHvacState[] = {
+  PubTopicHvacState1,
+  PubTopicHvacState2,
+  PubTopicHvacState3,
+  PubTopicHvacState4,
+  PubTopicHvacState5,
+  PubTopicHvacState6,
+  PubTopicHvacState7,
+  PubTopicHvacState8,
+  PubTopicHvacState9
+};
+*/
+
+
+/**/*Outputs
+  Example: const boolean AtachSwitc1 = INPUT1; in that
+  case the out 1 will be high if the in 1 high
+  = IN....... you need to write the input that you want as a
+  button in that case you need to leave that input mqtt data
+  without any data because the input state will be same as
+  the output state.*/
+/*Output 1*/
+const String  SubTopicOut1 = "mega/subout1"; //Here you need to write your subtopic
+const String  PubTopicOut1 = "mega/pubout1"; //Here you need to write your pubtopic
+const boolean OutputType1 = false;           //True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate1 = false;      //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor1 = 0;            //Only needed in termostate mode
+const boolean AtachSwitc1 =  true;           //If you wanted a switch you need to chose true
+const boolean SwitchType1 = false;           //True = normal switch   false = push button
+const int     OutSwitch1 = 0;                //Here you can chose the input that used as switch
+/*Output2*/
+const String  SubTopicOut2 = "mega/subout2"; //Here you need to write your subtopic
+const String  PubTopicOut2 = "mega/pubout2"; //Here you need to write your pubtopic
+const boolean OutputType2 = false;           //True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate2 = false;      //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor2 = 0;            //Only needed in termostate mode
+const boolean AtachSwitc2 = true;            //If you wanted a switch you need to chose true
+const boolean SwitchType2 = true;            //True = normal switch   false = push button
+const int     OutSwitch2 = 1;                //Here you can chose the input that used as switch
+/*Output3*/
+const String  SubTopicOut3 = "mega/subout3"; //Here you need to write your subtopic
+const String  PubTopicOut3 = "mega/pubout3"; //Here you need to write your pubtopic
+const boolean OutputType3 = false;           //True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate3 = false;      //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor3 = 0;            //Only needed in termostate mode
+const boolean AtachSwitc3 =  false;          //If you wanted a switch you need to chose true
+const boolean SwitchType3 = false;           //True = normal switch   false = push button
+const int     OutSwitch3 = 2;                //Here you can chose the input that used as switch
+/*Output4*/
+const String  SubTopicOut4 = "mega/subout4"; //Here you need to write your subtopic
+const String  PubTopicOut4 = "mega/pubout4"; //Here you need to write your pubtopic
+const boolean OutputType4 = false;           //True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate4 = false;      //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor4 = 0;            //Only needed in termostate mode
+const boolean AtachSwitc4 =  false;          //If you wanted a switch you need to chose true
+const boolean SwitchType4 = false;           //True = normal switch   false = push button
+const int     OutSwitch4 = 3;                //Here you can chose the input that used as switch
+/*Output5*/
+const String  SubTopicOut5 = "mega/subout5"; //Here you need to write your subtopic
+const String  PubTopicOut5 = "mega/pubout5"; //Here you need to write your pubtopic
+const boolean OutputType5 = false;           //True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate5 = false;      //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor5 = 0;            //Only needed in termostate mode
+const boolean AtachSwitc5 =  false;          //If you wanted a switch you need to chose true
+const boolean SwitchType5 = false;           //True = normal switch   false = push button
+const int     OutSwitch5 = 4;                //Here you can chose the input that used as switch
+/*Output6*/
+const String  SubTopicOut6 = "mega/subout6"; //Here you need to write your subtopic
+const String  PubTopicOut6 = "mega/pubout6"; //Here you need to write your pubtopic
+const boolean OutputType6 = false;           //True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate6 = false;      //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor6 = 0;            //Only needed in termostate mode
+const boolean AtachSwitc6 =  false;          //If you wanted a switch you need to chose true
+const boolean SwitchType6 = false;           //True = normal switch   false = push button
+const int     OutSwitch6 = 0;                //Here you can chose the input that used as switch
+/*Output7*/
+const String  SubTopicOut7 = "mega/subout7"; //Here you need to write your subtopic
+const String  PubTopicOut7 = "mega/pubout7"; //Here you need to write your pubtopic
+const boolean OutputType7 = false;           //True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate7 = false;      //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor7 = 0;            //Only needed in termostate mode
+const boolean AtachSwitc7 =  false;          //If you wanted a switch you need to chose true
+const boolean SwitchType7 = false;           //True = normal switch   false = push button
+const int     OutSwitch7 = 0;                //Here you can chose the input that used as switch
+/*Output8*/
+const String  SubTopicOut8 = "mega/subout8";         //Here you need to write your subtopic
+const String  PubTopicOut8 = "mega/pubout8";         //Here you need to write your pubtopic
+const boolean OutputType8 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate8 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor8 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc8 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType8 = false;      //True = normal switch   false = push button
+const int     OutSwitch8 = 0;            //Here you can chose the input that used as switch
+/*Output9*/
+const String  SubTopicOut9 = "mega/subout9";         //Here you need to write your subtopic
+const String  PubTopicOut9 = "mega/pubout9";         //Here you need to write your pubtopic
+const boolean OutputType9 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate9 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor9 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc9 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType9 = false;      //True = normal switch   false = push button
+const int     OutSwitch9 = 0;            //Here you can chose the input that used as switch
+/*Output10*/
+const String  SubTopicOut10 = "mega/subout10";         //Here you need to write your subtopic
+const String  PubTopicOut10 = "mega/pubout10";         //Here you need to write your pubtopic
+const boolean OutputType10 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate10 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor10 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc10 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType10 = false;      //True = normal switch   false = push button
+const int     OutSwitch10 = 0;            //Here you can chose the input that used as switch
+/*Output 11*/
+const String  SubTopicOut11 = "mega/subout11";         //Here you need to write your subtopic
+const String  PubTopicOut11 = "mega/pubout11";         //Here you need to write your pubtopic
+const boolean OutputType11 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate11 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor11 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc11 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType11 = false;      //True = normal switch   false = push button
+const int     OutSwitch11 = 0;            //Here you can chose the input that used as switch
+/*Output12*/
+const String  SubTopicOut12 = "mega/subout12";         //Here you need to write your subtopic
+const String  PubTopicOut12 = "mega/pubout12";         //Here you need to write your pubtopic
+const boolean OutputType12 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate12 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor12 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc12 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType12 = false;      //True = normal switch   false = push button
+const int     OutSwitch12 = 0;            //Here you can chose the input that used as switch
+/*Output13*/
+const String  SubTopicOut13 = "mega/subout13";         //Here you need to write your subtopic
+const String  PubTopicOut13 = "mega/pubout13";         //Here you need to write your pubtopic
+const boolean OutputType13 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate13 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor13 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc13 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType13 = false;      //True = normal switch   false = push button
+const int     OutSwitch13 = 0;            //Here you can chose the input that used as switch
+/*Output14*/
+const String  SubTopicOut14 = "mega/subout14";         //Here you need to write your subtopic
+const String  PubTopicOut14 = "mega/pubout14";         //Here you need to write your pubtopic
+const boolean OutputType14 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate14 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor14 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc14 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType14 = false;      //True = normal switch   false = push button
+const int     OutSwitch14 = 0;            //Here you can chose the input that used as switch
+/*Output15*/
+const String  SubTopicOut15 = "mega/subout15";         //Here you need to write your subtopic
+const String  PubTopicOut15 = "mega/pubout15";         //Here you need to write your pubtopic
+const boolean OutputType15 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate15 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor15 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc15 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType15 = false;      //True = normal switch   false = push button
+const int     OutSwitch15 = 0;            //Here you can chose the input that used as switch
+/*Output16*/
+const String  SubTopicOut16 = "mega/subout16";         //Here you need to write your subtopic
+const String  PubTopicOut16 = "mega/pubout16";         //Here you need to write your pubtopic
+const boolean OutputType16 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate16 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor16 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc16 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType16 = false;      //True = normal switch   false = push button
+const int     OutSwitch16 = 0;            //Here you can chose the input that used as switch
+/*Output17*/
+const String  SubTopicOut17 = "mega/subout17";         //Here you need to write your subtopic
+const String  PubTopicOut17 = "mega/pubout17";         //Here you need to write your pubtopic
+const boolean OutputType17 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate17 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor17 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc17 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType17 = false;      //True = normal switch   false = push button
+const int     OutSwitch17 = 0;            //Here you can chose the input that used as switch
+/*Output18*/
+const String  SubTopicOut18 = "mega/subout18";         //Here you need to write your subtopic
+const String  PubTopicOut18 = "mega/pubout18";         //Here you need to write your pubtopic
+const boolean OutputType18 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate18 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor18 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc18 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType18 = false;      //True = normal switch   false = push button
+const int     OutSwitch18 = 0;            //Here you can chose the input that used as switch
+/*Output19*/
+const String  SubTopicOut19 = "mega/subout19";         //Here you need to write your subtopic
+const String  PubTopicOut19 = "mega/pubout19";         //Here you need to write your pubtopic
+const boolean OutputType19 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate19 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor19 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc19 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType19 = false;      //True = normal switch   false = push button
+const int     OutSwitch19 = 0;            //Here you can chose the input that used as switch
+/*Output20*/
+const String  SubTopicOut20 = "mega/subout20";         //Here you need to write your subtopic
+const String  PubTopicOut20 = "mega/pubout20";         //Here you need to write your pubtopic
+const boolean OutputType20 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate20 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor20 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc20 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType20 = false;      //True = normal switch   false = push button
+const int     OutSwitch20 = 0;            //Here you can chose the input that used as switch
+/*Output 21*/
+const String  SubTopicOut21 = "mega/subout21";         //Here you need to write your subtopic
+const String  PubTopicOut21 = "mega/pubout21";         //Here you need to write your pubtopic
+const boolean OutputType21 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate21 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor21 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc21 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType21 = false;      //True = normal switch   false = push button
+const int     OutSwitch21 = 0;            //Here you can chose the input that used as switch
+/*Output22*/
+const String  SubTopicOut22 = "mega/subout22";         //Here you need to write your subtopic
+const String  PubTopicOut22 = "mega/pubout22";         //Here you need to write your pubtopic
+const boolean OutputType22 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate22 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor22 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc22 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType22 = false;      //True = normal switch   false = push button
+const int     OutSwitch22 = 0;            //Here you can chose the input that used as switch
+/*Output23*/
+const String  SubTopicOut23 = "mega/subout23";         //Here you need to write your subtopic
+const String  PubTopicOut23 = "mega/pubout23";         //Here you need to write your pubtopic
+const boolean OutputType23 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate23 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor23 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc23 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType23 = false;      //True = normal switch   false = push button
+const int     OutSwitch23 = 0;            //Here you can chose the input that used as switch
+/*Output24*/
+const String  SubTopicOut24 = "mega/subout24";         //Here you need to write your subtopic
+const String  PubTopicOut24 = "mega/pubout24";         //Here you need to write your pubtopic
+const boolean OutputType24 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate24 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor24 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc24 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType24 = false;      //True = normal switch   false = push button
+const int     OutSwitch24 = 0;            //Here you can chose the input that used as switch
+/*Output25*/
+const String  SubTopicOut25 = "mega/subout25";         //Here you need to write your subtopic
+const String  PubTopicOut25 = "mega/pubout25";         //Here you need to write your pubtopic
+const boolean OutputType25 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate25 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor25 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc25 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType25 = false;      //True = normal switch   false = push button
+const int     OutSwitch25 = 0;            //Here you can chose the input that used as switch
+/*Output26*/
+const String  SubTopicOut26 = "mega/subout26";         //Here you need to write your subtopic
+const String  PubTopicOut26 = "mega/pubout26";         //Here you need to write your pubtopic
+const boolean OutputType26 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate26 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor26 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc26 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType26 = false;      //True = normal switch   false = push button
+const int     OutSwitch26 = 0;            //Here you can chose the input that used as switch
+/*Output27*/
+const String  SubTopicOut27 = "mega/subout27";         //Here you need to write your subtopic
+const String  PubTopicOut27 = "mega/pubout27";         //Here you need to write your pubtopic
+const boolean OutputType27 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate27 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor27 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc27 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType27 = false;      //True = normal switch   false = push button
+const int     OutSwitch27 = 0;            //Here you can chose the input that used as switch
+/*Output28*/
+const String  SubTopicOut28 = "mega/subout28";         //Here you need to write your subtopic
+const String  PubTopicOut28 = "mega/pubout28";         //Here you need to write your pubtopic
+const boolean OutputType28 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate28 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor28 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc28 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType28 = false;      //True = normal switch   false = push button
+const int     OutSwitch28 = 0;            //Here you can chose the input that used as switch
+/*Output29*/
+const String  SubTopicOut29 = "mega/subout29";         //Here you need to write your subtopic
+const String  PubTopicOut29 = "mega/pubout29";         //Here you need to write your pubtopic
+const boolean OutputType29 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate29 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor29 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc29 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType29 = false;      //True = normal switch   false = push button
+const int     OutSwitch29 = 0;            //Here you can chose the input that used as switch
+/*Output30*/
+const String  SubTopicOut30 = "mega/subout30";         //Here you need to write your subtopic
+const String  PubTopicOut30 = "mega/pubout30";         //Here you need to write your pubtopic
+const boolean OutputType30 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate30 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor30 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc30 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType30 = false;      //True = normal switch   false = push button
+const int     OutSwitch30 = 0;            //Here you can chose the input that used as switch
+/*Output 31*/
+const String  SubTopicOut31 = "mega/subout31";         //Here you need to write your subtopic
+const String  PubTopicOut31 = "mega/pubout31";         //Here you need to write your pubtopic
+const boolean OutputType31  = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate31 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor31 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc31 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType31 = false;      //True = normal switch   false = push button
+const int     OutSwitch31 = 0;            //Here you can chose the input that used as switch
+/*Output32*/
+const String  SubTopicOut32 = "mega/subout32";         //Here you need to write your subtopic
+const String  PubTopicOut32 = "mega/pubout32";         //Here you need to write your pubtopic
+const boolean OutputType32 = false;//True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate32 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor32 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc32 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType32 = false;      //True = normal switch   false = push button
+const int     OutSwitch32 = 0;            //Here you can chose the input that used as switch
+/*Output33*/
+const String  SubTopicOut33 = "mega/subout33";         //Here you need to write your subtopic
+const String  PubTopicOut33 = "mega/pubout33";         //Here you need to write your pubtopic
+const boolean OutputType33 = false;                //True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate33 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor33 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc33 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType33 = false;       //True = normal switch   false = push button
+const int     OutSwitch33 = 0;            //Here you can chose the input that used as switch
+/*Output34*/
+const String  SubTopicOut34 = "mega/subout34";         //Here you need to write your subtopic
+const String  PubTopicOut34 = "mega/pubout34";         //Here you need to write your pubtopic
+const boolean OutputType34 = false;               //True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate34 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor34 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc34 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType34 = false;       //True = normal switch   false = push button
+const int     OutSwitch34 = 0;            //Here you can chose the input that used as switch
+/*Output35*/
+const String  SubTopicOut35 = "mega/subout35";         //Here you need to write your subtopic
+const String  PubTopicOut35 = "mega/pubout35";         //Here you need to write your pubtopic
+const boolean OutputType35 = false;               //True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate35 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor35 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc35 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType35 = false;       //True = normal switch   false = push button
+const int     OutSwitch35 = 0;            //Here you can chose the input that used as switch
+/*Output36*/
+const String  SubTopicOut36 = "mega/subout36";         //Here you need to write your subtopic
+const String  PubTopicOut36 = "mega/pubout36";         //Here you need to write your pubtopic
+const boolean OutputType36 = false;               //True = analog(only in PWM capable outputs) False = digital
+const boolean OutAsTermostate36 = false;  //Here you can chose out put 1 to be a virtualy controlled termostate this can be used for heaters and heat valves
+const int     OutTempSensor36 = 0;        //Only needed in termostate mode
+const boolean AtachSwitc36 =  false;      //If you wanted a switch you need to chose true
+const boolean SwitchType36 = false;       //True = normal switch   false = push button
+const int     OutSwitch36 = 0;            //Here you can chose the input that used as switch
+
+/*Input1*/
+const String  SubTopicIn1 = "mega/subin1";            //Here you need to write your subtopic
+const String  PubTopicIn1 = "mega/pubin1";            //Here you need to write your pubtopic
+const boolean InputAsSwitch1 = true;        //Here you can chose input a switch
+const boolean InputSwitchType1 = true;      //True = push button False = normal switch
+const boolean InputType1 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter1 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input2*/
+const String  SubTopicIn2 = "mega/subin2";            //Here you need to write your subtopic
+const String  PubTopicIn2 = "mega/pubin2";            //Here you need to write your pubtopic
+const boolean InputAsSwitch2 = true;        //Here you can chose input a switch
+const boolean InputSwitchType2 = true;      //True = push button False = normal switch
+const boolean InputType2 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter2 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input3*/
+const String  SubTopicIn3 = "mega/subin3";            //Here you need to write your subtopic
+const String  PubTopicIn3 = "mega/pubin3";            //Here you need to write your pubtopic
+const boolean InputAsSwitch3 = true;        //Here you can chose input a switch
+const boolean InputSwitchType3 = true;      //True = push button False = normal switch
+const boolean InputType3 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter3 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input4*/
+const String  SubTopicIn4 = "mega/subin4";            //Here you need to write your subtopic
+const String  PubTopicIn4 = "mega/pubin4";            //Here you need to write your pubtopic
+const boolean InputAsSwitch4 = true;        //Here you can chose input a switch
+const boolean InputSwitchType4 = true;      //True = push button False = normal switch
+const boolean InputType4 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter4 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input5*/
+const String  SubTopicIn5 = "mega/subin5";            //Here you need to write your subtopic
+const String  PubTopicIn5 = "mega/pubin5";            //Here you need to write your pubtopic
+const boolean InputAsSwitch5 = true;        //Here you can chose input a switch
+const boolean InputSwitchType5 = true;      //True = push button False = normal switch
+const boolean InputType5 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter5 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input6*/
+const String  SubTopicIn6 = "mega/subin6";            //Here you need to write your subtopic
+const String  PubTopicIn6 = "mega/pubin6";            //Here you need to write your pubtopic
+const boolean InputAsSwitch6 = true;        //Here you can chose input a switch
+const boolean InputSwitchType6 = true;      //True = push button False = normal switch
+const boolean InputType6 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter6 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input7*/
+const String  SubTopicIn7 = "mega/subin7";            //Here you need to write your subtopic
+const String  PubTopicIn7 = "mega/pubin7";            //Here you need to write your pubtopic
+const boolean InputAsSwitch7 = true;        //Here you can chose input a switch
+const boolean InputSwitchType7 = true;      //True = push button False = normal switch
+const boolean InputType7 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter7 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input8*/
+const String  SubTopicIn8 = "mega/subin8";            //Here you need to write your subtopic
+const String  PubTopicIn8 = "mega/pubin8";            //Here you need to write your pubtopic
+const boolean InputAsSwitch8 = true;        //Here you can chose input a switch
+const boolean InputSwitchType8 = true;      //True = push button False = normal switch
+const boolean InputType8 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter8 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input9*/
+const String  SubTopicIn9 = "mega/subin9";            //Here you need to write your subtopic
+const String  PubTopicIn9 = "mega/pubin9";            //Here you need to write your pubtopic
+const boolean InputAsSwitch9 = true;        //Here you can chose input a switch
+const boolean InputSwitchType9 = true;      //True = push button False = normal switch
+const boolean InputType9 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter9 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input10*/
+const String  SubTopicIn10 = "mega/subin10";            //Here you need to write your subtopic
+const String  PubTopicIn10 = "mega/pubin10";            //Here you need to write your pubtopic
+const boolean InputAsSwitch10 = true;        //Here you can chose input a switch
+const boolean InputSwitchType10 = true;      //True = push button False = normal switch
+const boolean InputType10 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter10 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input11*/
+const String  SubTopicIn11 = "mega/subin11";            //Here you need to write your subtopic
+const String  PubTopicIn11 = "mega/pubin11";            //Here you need to write your pubtopic
+const boolean InputAsSwitch11 = true;        //Here you can chose input a switch
+const boolean InputSwitchType11 = true;      //True = push button False = normal switch
+const boolean InputType11 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter11 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input12*/
+const String  SubTopicIn12 = "mega/subin12";            //Here you need to write your subtopic
+const String  PubTopicIn12 = "mega/pubin12";            //Here you need to write your pubtopic
+const boolean InputAsSwitch12 = true;        //Here you can chose input a switch
+const boolean InputSwitchType12 = true;      //True = push button False = normal switch
+const boolean InputType12 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter12 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input13*/
+const String  SubTopicIn13 = "mega/subin13";            //Here you need to write your subtopic
+const String  PubTopicIn13 = "mega/pubin13";            //Here you need to write your pubtopic
+const boolean InputAsSwitch13 = true;        //Here you can chose input a switch
+const boolean InputSwitchType13 = true;      //True = push button False = normal switch
+const boolean InputType13 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter13 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input14*/
+const String  SubTopicIn14 = "mega/subin14";            //Here you need to write your subtopic
+const String  PubTopicIn14 = "mega/pubin14";            //Here you need to write your pubtopic
+const boolean InputAsSwitch14 = true;        //Here you can chose input a switch
+const boolean InputSwitchType14 = true;      //True = push button False = normal switch
+const boolean InputType14 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter14 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input15*/
+const String  SubTopicIn15 = "mega/subin15";            //Here you need to write your subtopic
+const String  PubTopicIn15 = "mega/pubin15";            //Here you need to write your pubtopic
+const boolean InputAsSwitch15 = true;        //Here you can chose input a switch
+const boolean InputSwitchType15 = true;      //True = push button False = normal switch
+const boolean InputType15 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter15 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input16*/
+const String  SubTopicIn16 = "mega/subin16";            //Here you need to write your subtopic
+const String  PubTopicIn16 = "mega/pubin16";            //Here you need to write your pubtopic
+const boolean InputAsSwitch16 = true;        //Here you can chose input a switch
+const boolean InputSwitchType16 = true;      //True = push button False = normal switch
+const boolean InputType16 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter16 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input17*/
+const String  SubTopicIn17 = "mega/subin17";            //Here you need to write your subtopic
+const String  PubTopicIn17 = "mega/pubin17";            //Here you need to write your pubtopic
+const boolean InputAsSwitch17 = true;        //Here you can chose input a switch
+const boolean InputSwitchType17 = true;      //True = push button False = normal switch
+const boolean InputType17 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter17 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input18*/
+const String  SubTopicIn18 = "mega/subin18";            //Here you need to write your subtopic
+const String  PubTopicIn18 = "mega/pubin18";            //Here you need to write your pubtopic
+const boolean InputAsSwitch18 = true;        //Here you can chose input a switch
+const boolean InputSwitchType18 = true;      //True = push button False = normal switch
+const boolean InputType18 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter18 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input19*/
+const String  SubTopicIn19 = "mega/subin19";            //Here you need to write your subtopic
+const String  PubTopicIn19 = "mega/pubin19";            //Here you need to write your pubtopic
+const boolean InputAsSwitch19 = true;        //Here you can chose input a switch
+const boolean InputSwitchType19 = true;      //True = push button False = normal switch
+const boolean InputType19 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter19 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input20*/
+const String  SubTopicIn20 = "mega/subin20";            //Here you need to write your subtopic
+const String  PubTopicIn20 = "mega/pubin20";            //Here you need to write your pubtopic
+const boolean InputAsSwitch20 = true;        //Here you can chose input a switch
+const boolean InputSwitchType20 = true;      //True = push button False = normal switch
+const boolean InputType20 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter20 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input21*/
+const String  SubTopicIn21 = "mega/subin21";            //Here you need to write your subtopic
+const String  PubTopicIn21 = "mega/pubin21";            //Here you need to write your pubtopic
+const boolean InputAsSwitch21 = true;        //Here you can chose input a switch
+const boolean InputSwitchType21 = true;      //True = push button False = normal switch
+const boolean InputType21 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter21 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input22*/
+const String  SubTopicIn22 = "mega/subin22";            //Here you need to write your subtopic
+const String  PubTopicIn22 = "mega/pubin22";            //Here you need to write your pubtopic
+const boolean InputAsSwitch22 = true;        //Here you can chose input a switch
+const boolean InputSwitchType22 = true;      //True = push button False = normal switch
+const boolean InputType22 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter22 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input23*/
+const String  SubTopicIn23 = "mega/subin23";            //Here you need to write your subtopic
+const String  PubTopicIn23 = "mega/pubin23";            //Here you need to write your pubtopic
+const boolean InputAsSwitch23 = true;        //Here you can chose input a switch
+const boolean InputSwitchType23 = true;      //True = push button False = normal switch
+const boolean InputType23 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter23 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input24*/
+const String  SubTopicIn24 = "mega/subin24";            //Here you need to write your subtopic
+const String  PubTopicIn24 = "mega/pubin24";            //Here you need to write your pubtopic
+const boolean InputAsSwitch24 = true;        //Here you can chose input a switch
+const boolean InputSwitchType24 = true;      //True = push button False = normal switch
+const boolean InputType24 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter24 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input25*/
+const String  SubTopicIn25 = "mega/subin25";            //Here you need to write your subtopic
+const String  PubTopicIn25 = "mega/pubin25";            //Here you need to write your pubtopic
+const boolean InputAsSwitch25 = true;        //Here you can chose input a switch
+const boolean InputSwitchType25 = true;      //True = push button False = normal switch
+const boolean InputType25 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter25 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input26*/
+const String  SubTopicIn26 = "mega/subin26";            //Here you need to write your subtopic
+const String  PubTopicIn26 = "mega/pubin26";            //Here you need to write your pubtopic
+const boolean InputAsSwitch26 = true;        //Here you can chose input a switch
+const boolean InputSwitchType26 = true;      //True = push button False = normal switch
+const boolean InputType26 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter26 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+/*Input27*/
+const String  SubTopicIn27 = "mega/subin27";            //Here you need to write your subtopic
+const String  PubTopicIn27 = "mega/pubin27";            //Here you need to write your pubtopic
+const boolean InputAsSwitch27 = true;        //Here you can chose input a switch
+const boolean InputSwitchType27 = true;      //True = push button False = normal switch
+const boolean InputType27 = false;                  //True = analog false = digital
+const boolean AnalogTempMeter27 = false;            //true = analog temp meter false = no temp meter You can only chose analog temp meters here
+
+/*Temp1*/
+String PubTopicTemp1 = "mega/pubtempsensor1";                   //Here you need to write your pubtopic
+String PubTopicHumidity1 = "mega/pubhumiditysensor1";               //Here you need to write your pubtopic
+const boolean TempSensorType1 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType1 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin1 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp2*/
+String PubTopicTemp2 = "mega/pubtempsensor2";                   //Here you need to write your pubtopic
+String PubTopicHumidity2 = "mega/pubhumiditysensor2";               //Here you need to write your pubtopic
+const boolean TempSensorType2 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType2 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin2 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp3*/
+String PubTopicTemp3 = "mega/pubtempsensor3";                   //Here you need to write your pubtopic
+String PubTopicHumidity3 = "mega/pubhumiditysensor3";               //Here you need to write your pubtopic
+const boolean TempSensorType3 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType3 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin3 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp4*/
+String PubTopicTemp4 = "mega/pubtempsensor4";                   //Here you need to write your pubtopic
+String PubTopicHumidity4 = "mega/pubhumiditysensor4";               //Here you need to write your pubtopic
+const boolean TempSensorType4 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType4 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin4 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp5*/
+String PubTopicTemp5 = "mega/pubtempsensor5";                   //Here you need to write your pubtopic
+String PubTopicHumidity5 = "mega/pubhumiditysensor5";               //Here you need to write your pubtopic
+const boolean TempSensorType5 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType5 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin5 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp6*/
+String PubTopicTemp6 = "mega/pubtempsensor6";                   //Here you need to write your pubtopic
+String PubTopicHumidity6 = "mega/pubhumiditysensor6";               //Here you need to write your pubtopic
+const boolean TempSensorType6 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType6 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin6 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp7*/
+String PubTopicTemp7 = "mega/pubtempsensor7";                   //Here you need to write your pubtopic
+String PubTopicHumidity7 = "mega/pubhumiditysensor7";               //Here you need to write your pubtopic
+const boolean TempSensorType7 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType7 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin7 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp8*/
+String PubTopicTemp8 = "mega/pubtempsensor8";                   //Here you need to write your pubtopic
+String PubTopicHumidity8 = "mega/pubhumiditysensor8";               //Here you need to write your pubtopic
+const boolean TempSensorType8 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType8 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin8 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp9*/
+String PubTopicTemp9 = "mega/pubtempsensor9";                   //Here you need to write your pubtopic
+String PubTopicHumidity9 = "mega/pubhumiditysensor9";               //Here you need to write your pubtopic
+const boolean TempSensorType9 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType9 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin9 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp10*/
+String PubTopicTemp10 = "mega/pubtempsensor10";                   //Here you need to write your pubtopic
+String PubTopicHumidity10 = "mega/pubhumiditysensor10";               //Here you need to write your pubtopic
+const boolean TempSensorType10 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType10 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin10 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*******************************************************Heating / Cooling system set up****************************************************************/
+/*HVAC1*/
+const String PubTopicHvacTemp1 = "mega/pubhvactemp1";  //Here you need to write your pubtopic to send your wanted temperature
+const String SubTopicHvacTemp1 = "mega/subhvactemp1";  //Here you need to write your Subtopic to get your wanted temperature
+const String PubTopicHvacState1 = "mega/pubhvacstate1"; //Here you can write your pubtopic for the actual heating/cooling state (that means your heater on or off)
+const int HvacTempsensor1 = 0;
+/*HVAC2*/
+const String PubTopicHvacTemp2 = "mega/pubhvactemp2";  //Here you need to write your pubtopic to send your wanted temperature
+const String SubTopicHvacTemp2 = "mega/subhvactemp2";  //Here you need to write your Subtopic to get your wanted temperature
+const String PubTopicHvacState2 = "mega/pubhvacstate2"; //Here you can write your pubtopic for the actual heating/cooling state (that means your heater on or off)
+const int HvacTempsensor2 = 0;
+/*HVAC*/
+const String PubTopicHvacTemp3 = "mega/pubhvactemp3";  //Here you need to write your pubtopic to send your wanted temperature
+const String SubTopicHvacTemp3 = "mega/subhvactemp3";  //Here you need to write your Subtopic to get your wanted temperature
+const String PubTopicHvacState3 = "mega/pubhvacstate3"; //Here you can write your pubtopic for the actual heating/cooling state (that means your heater on or off)
+const int HvacTempsensor3 = 0;
+/*HVAC*/
+const String PubTopicHvacTemp4 = "mega/pubhvactemp4";  //Here you need to write your pubtopic to send your wanted temperature
+const String SubTopicHvacTemp4 = "mega/subhvactemp4";  //Here you need to write your Subtopic to get your wanted temperature
+const String PubTopicHvacState4 = "mega/pubhvacstate4"; //Here you can write your pubtopic for the actual heating/cooling state (that means your heater on or off)
+const int HvacTempsensor4 = 0;
+/*HVAC*/
+const String PubTopicHvacTemp5 = "mega/pubhvactemp5";  //Here you need to write your pubtopic to send your wanted temperature
+const String SubTopicHvacTemp5 = "mega/subhvactemp5";  //Here you need to write your Subtopic to get your wanted temperature
+const String PubTopicHvacState5 = "mega/pubhvacstate5"; //Here you can write your pubtopic for the actual heating/cooling state (that means your heater on or off)
+const int HvacTempsensor5 = 0;
+/*HVAC*/
+const String PubTopicHvacTemp6 = "mega/pubhvactemp6";  //Here you need to write your pubtopic to send your wanted temperature
+const String SubTopicHvacTemp6 = "mega/subhvactemp6";  //Here you need to write your Subtopic to get your wanted temperature
+const String PubTopicHvacState6 = "mega/pubhvacstate6"; //Here you can write your pubtopic for the actual heating/cooling state (that means your heater on or off)
+const int HvacTempsensor6 = 0;
+/*HVAC*/
+const String PubTopicHvacTemp7 = "mega/pubhvactemp7";  //Here you need to write your pubtopic to send your wanted temperature
+const String SubTopicHvacTemp7 = "mega/subhvactemp7";  //Here you need to write your Subtopic to get your wanted temperature
+const String PubTopicHvacState7 = "mega/pubhvacstate7"; //Here you can write your pubtopic for the actual heating/cooling state (that means your heater on or off)
+const int HvacTempsensor7 = 0;
+/*HVAC*/
+const String PubTopicHvacTemp8 = "mega/pubhvactemp8";  //Here you need to write your pubtopic to send your wanted temperature
+const String SubTopicHvacTemp8 = "mega/subhvactemp8";  //Here you need to write your Subtopic to get your wanted temperature
+const String PubTopicHvacState8 = "mega/pubhvacstate8"; //Here you can write your pubtopic for the actual heating/cooling state (that means your heater on or off)
+const int HvacTempsensor8 = 0;
+/*HVAC*/
+const String PubTopicHvacTemp9  = "mega/pubhvactemp9";  //Here you need to write your pubtopic to send your wanted temperature
+const String SubTopicHvacTemp9 = "mega/subhvactemp9";  //Here you need to write your Subtopic to get your wanted temperature
+const String PubTopicHvacState9 = "mega/pubhvacstate9"; //Here you can write your pubtopic for the actual heating/cooling state (that means your heater on or off)
+const int HvacTempsensor9 = 0;
+
+/*const String PubTopicHvacMode9 = "mega/pubhvacmode9";  //Here you can write your pubtopic for your heater/AC mode 0 = off - 1 = Heating(only 0-1 used for virtual termostat) - 2 = cooling - 3 = fanmode - 4 = dry mode - 5 = turbo mode - 6 = sleep mode - 7 = automatic mode - 8 = enery saver mode     
+const String SubTopicHvacMode9 = "mega/subhvacmode9";  //Here you can write your subtopic for your heater/AC mode 0 = off - 1 = Heating(only 0-1 used for virtual termostat) - 2 = cooling - 3 = fanmode - 4 = dry mode - 5 = turbo mode - 6 = sleep mode - 7 = automatic mode - 8 = enery saver mode
+const String PubTopicHvacFan9 = "mega/pubhvacfan9";    //Here you can write your pubtopic fan speed this is only works for ac values need to be 0-3: 0 = off - 1 = 1 speed - 2 = 2 speed - 3 = 3 speed
+const String SubTopicHvacFan9 = "mega/subhvacfan9";    //Here you can write your subtopic fan speed this is only works for ac values need to be 0-3: 0 = off - 1 = 1 speed - 2 = 2 speed - 3 = 3 speed
+
+/*Temp11
+String PubTopicTemp11 = "mega/pubtempsensor11";                   //Here you need to write your pubtopic
+String PubTopicHumidity11 = "mega/pubhumiditysensor11";               //Here you need to write your pubtopic
+const boolean TempSensorType11 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType11 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin11 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp12
+String PubTopicTemp12 = "mega/pubtempsensor12";                   //Here you need to write your pubtopic
+String PubTopicHumidity12 = "mega/pubhumiditysensor12";               //Here you need to write your pubtopic
+const boolean TempSensorType12 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType12 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin12 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp13
+String PubTopicTemp13 = "mega/pubtempsensor13";                   //Here you need to write your pubtopic
+String PubTopicHumidity13 = "mega/pubhumiditysensor13";               //Here you need to write your pubtopic
+const boolean TempSensorType13 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType13 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin13 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp14
+String PubTopicTemp14 = "mega/pubtempsensor14";                   //Here you need to write your pubtopic
+String PubTopicHumidity14 = "mega/pubhumiditysensor14";               //Here you need to write your pubtopic
+const boolean TempSensorType14 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType14 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin14 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp15
+String PubTopicTemp15 = "mega/pubtempsensor15";                   //Here you need to write your pubtopic
+String PubTopicHumidity15 = "mega/pubhumiditysensor15";               //Here you need to write your pubtopic
+const boolean TempSensorType15 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType15 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin15 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp16
+String PubTopicTemp16 = "mega/pubtempsensor16";                   //Here you need to write your pubtopic
+String PubTopicHumidity16 = "mega/pubhumiditysensor16";               //Here you need to write your pubtopic
+const boolean TempSensorType16 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType16 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin16 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp17
+String PubTopicTemp17 = "mega/pubtempsensor17";                   //Here you need to write your pubtopic
+String PubTopicHumidity17 = "mega/pubhumiditysensor17";               //Here you need to write your pubtopic
+const boolean TempSensorType17 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType17 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin17 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+/*Temp18
+String PubTopicTemp18 = "mega/pubtempsensor18";                   //Here you need to write your pubtopic
+String PubTopicHumidity18 = "mega/pubhumiditysensor18";               //Here you need to write your pubtopic
+const boolean TempSensorType18 = true;               //True = DS18B20 False = Analog --if analog TempSensorPin  need to be filled up
+const boolean AnalogTempSensorType18 = true;               //True = DHT11 False = LM35  Only dht11 will publish hudimity data
+const int TempSensorPin18 = 0;                    //You write here the chosen input number Example: const int TempSensorPin = INPUT1; The choosen input settings needs to be blank!!!!!!
+
+
+*/*/
